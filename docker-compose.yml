@@ -4,6 +4,6 @@ services:
     build: ./application
     env_file: ./.env
     volumes:
-      - ./src/:/usr/src/app/
+      - ./application/:/usr/src/app/
     ports:
       - 8002:8000
