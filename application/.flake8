@@ -1,0 +1,9 @@
+[flake8]
+max-complexity = 6
+inline-quotes = double
+max-line-length = 122
+docstring_style = sphinx
+
+exclude =
+  .git,
+  *migrations*,

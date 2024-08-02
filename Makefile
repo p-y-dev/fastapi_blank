@@ -11,3 +11,6 @@ logs:
 
 bash:
 	docker exec -it $(C_NAME) bash
+
+lint:
+	docker exec $(C_NAME) flake8
