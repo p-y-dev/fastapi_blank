@@ -1,9 +1,6 @@
-FROM python:3.12
+FROM python:3.12.4-slim-bullseye
 
 WORKDIR /usr/src/app
-
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
 
 COPY pyproject.toml poetry.lock /usr/src/app/
 
