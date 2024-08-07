@@ -14,3 +14,5 @@ bash:
 
 lint:
 	docker exec $(C_NAME) flake8
+	docker exec $(C_NAME) mypy .
+	docker exec $(C_NAME) black --check .
