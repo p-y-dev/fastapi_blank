@@ -36,7 +36,7 @@ app - название проекта/сервиса, например user_post
 - ```make down``` - Остановка проекта
 - ```make migration``` - Создание миграции
 - ```make migrate``` - Применение миграции
-- ```make lint``` - Проверка кода
+- ```make check``` - Проверка кода lint + tests
 - ```make logs | C_NAME=examplename make logs``` - Вывод логов. C_NAME - название контейнера
 - ```make bash | C_NAME=examplename make bash``` - Вход в консоль контейнера. C_NAME - название контейнера
 - ```make tests``` - Запуск тестов

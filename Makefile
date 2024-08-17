@@ -13,10 +13,11 @@ migration:
 migrate:
 	docker exec $(C_NAME) alembic upgrade head
 
-lint:
+check:
 	docker exec $(C_NAME) flake8
 	docker exec $(C_NAME) mypy .
 	docker exec $(C_NAME) black --check .
+	docker exec $(C_NAME) pytest . -n auto # -rP
 
 logs:
 	docker logs -f --tail 100 $(C_NAME)
