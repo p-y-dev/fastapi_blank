@@ -20,7 +20,7 @@ class TestCreateSimple:
         simple2 = await s_service.create("test_2")
         async with db_uow:
             simple2_in_db = await db_uow.simple_table.get_one(id=simple2.id)
-        assert simple2_in_db.name == simple2.name
+        assert simple2_in_db.name == "dddd"
 
     async def test_failure(self, db_uow: UnitOfWork) -> None:
         """Failure create simple test."""

@@ -1,0 +1,23 @@
+repos:
+  - repo: local
+    hooks:
+      - id: flake8-check
+        name: flake8-check
+        entry: bash -c 'cd app && flake8'
+        language: system
+        pass_filenames: false
+      - id: mypy-check
+        name: mypy-check
+        entry: bash -c 'cd app && mypy .'
+        language: system
+        pass_filenames: false
+      - id: mypy-check
+        name: mypy-check
+        entry: bash -c 'cd app && black --check .'
+        language: system
+        pass_filenames: false
+      - id: tests
+        name: tests
+        entry: bash -c 'docker compose down && docker compose up --build --remove-orphans -d && docker exec app_api pytest . -n auto && docker compose down'
+        language: system
+        pass_filenames: false
