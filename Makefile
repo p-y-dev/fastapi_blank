@@ -1,5 +1,5 @@
 C_NAME ?= app_api
-MIGR_NAME ?= migration
+M_NAME ?= migration
 
 up:
 	docker compose down && docker compose up --build --remove-orphans -d
@@ -8,7 +8,7 @@ down:
 	docker compose down
 
 migration:
-	docker exec $(C_NAME) alembic revision --autogenerate -m "$(MIGR_NAME)"
+	docker exec $(C_NAME) alembic revision --autogenerate -m "$(M_NAME)"
 
 migrate:
 	docker exec $(C_NAME) alembic upgrade head
